@@ -313,6 +313,9 @@ class MysqlEngine(EngineBase):
             self.close()
         return result
 
+    def source_file(self, db_name=None, sql='', close_conn=True):
+        """使用mysql-cli执行sql文件，用于上线原生工单"""
+
     def get_rollback(self, workflow):
         """通过inception获取回滚语句列表"""
         inception_engine = InceptionEngine()
